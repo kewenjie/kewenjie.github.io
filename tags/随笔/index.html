@@ -10,15 +10,21 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
+  <meta name="description" content="如何快速搭建个人博客环境准备 首先要安装git（这一步小伙伴们自行去做）  一、注册Github账号（已注册可忽略） 打开这个网址，注册一个github的账号 https:&#x2F;&#x2F;github.com&#x2F;join?source&#x3D;header-home进行注册 二、创建repository仓库 如图：  特别说明：你的仓库的名字 格式为[username].github.io username 必须是gi">
+<meta property="og:type" content="website">
 <meta property="og:title" content="tags">
 <meta property="og:url" content="https://kewenjie.github.io/tags/%E9%9A%8F%E7%AC%94/index.html">
 <meta property="og:site_name" content="随风">
+<meta property="og:description" content="如何快速搭建个人博客环境准备 首先要安装git（这一步小伙伴们自行去做）  一、注册Github账号（已注册可忽略） 打开这个网址，注册一个github的账号 https:&#x2F;&#x2F;github.com&#x2F;join?source&#x3D;header-home进行注册 二、创建repository仓库 如图：  特别说明：你的仓库的名字 格式为[username].github.io username 必须是gi">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1585925188173.png">
+<meta property="og:image" content="c:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1585926103545.png">
+<meta property="og:image" content="c:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1585926618155.png">
 <meta property="article:published_time" content="2020-04-01T15:51:20.000Z">
-<meta property="article:modified_time" content="2020-04-01T15:51:21.012Z">
+<meta property="article:modified_time" content="2020-04-03T15:20:18.600Z">
 <meta property="article:author" content="Mr.ke">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1585925188173.png">
   
     <link rel="alternative" href="/atom.xml" title="随风" type="application/atom+xml">
   
@@ -220,7 +226,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">0字</span>
+      <span class="post-count">1.1k字</span>
     </span>
   </span>
 
@@ -229,7 +235,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">1分</span>
+      <span class="post-count">4分</span>
     </span>
   </span>
 </div>
@@ -240,7 +246,67 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    
+    <h3 id="如何快速搭建个人博客"><a href="#如何快速搭建个人博客" class="headerlink" title="如何快速搭建个人博客"></a>如何快速搭建个人博客</h3><h4 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h4><blockquote>
+<p>首先要安装git（这一步小伙伴们自行去做）</p>
+</blockquote>
+<p><strong>一、注册Github账号（已注册可忽略）</strong></p>
+<p>打开这个网址，注册一个github的账号 <a href="https://github.com/join?source=header-home进行注册" target="_blank" rel="noopener">https://github.com/join?source=header-home进行注册</a></p>
+<p><strong>二、创建repository仓库</strong></p>
+<p>如图：</p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1585925188173.png" alt="1585925188173"></p>
+<p>特别说明：你的仓库的名字 格式为[username].github.io <code>username</code> 必须是github注册的用户名，否则无法访问</p>
+<p>举个例子  本人注册的用户名是kewenjie  那么我的仓库名称为kewenjie.github.io</p>
+<p><strong>拉取仓库到本地并进行初始化</strong></p>
+<blockquote>
+<p>在本地编写index.html(内容随意)，提交到github上</p>
+</blockquote>
+<h4 id="主角登场-hexo"><a href="#主角登场-hexo" class="headerlink" title="主角登场-hexo"></a>主角登场-hexo</h4><blockquote>
+<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页</p>
+</blockquote>
+<p>想要进一步了解hexo，请参考<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">官方文档</a></p>
+<p>由于hexo是由node进行构建，首先node环境安装</p>
+<p>下载Node.js 官方地址：<a href="https://nodejs.org/en/download/选择相应的版本进行安装" target="_blank" rel="noopener">https://nodejs.org/en/download/选择相应的版本进行安装</a></p>
+<p>安装完成后，查看是否安装成功，输入cmd</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">node -v 查看 node 版本</span><br><span class="line">npm -v 查看 npm 版本</span><br></pre></td></tr></table></figure>
+
+<h2 id="使用node安装hexo"><a href="#使用node安装hexo" class="headerlink" title="使用node安装hexo"></a>使用node安装hexo</h2><p>node安装好之后，可以使用npm来安装hexo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog(生成的博客文件夹的名字，自定义,会在对应执行该语句的路径生成对应的文件)</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo server（启动hexo）</span><br></pre></td></tr></table></figure>
+
+<p>最终效果如下：</p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1585926103545.png" alt="1585926103545"></p>
+<p>输入地址<a href="http://localhost:4000就可以进入hexo的界面">http://localhost:4000就可以进入hexo的界面</a></p>
+<h1 id="hexo配置"><a href="#hexo配置" class="headerlink" title="hexo配置"></a>hexo配置</h1><h2 id="hexo基本命令"><a href="#hexo基本命令" class="headerlink" title="hexo基本命令"></a>hexo基本命令</h2><p>这些命令，大部分都要在上一步创建好的<code>blog</code>目录下来执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;postName&quot; #新建文章</span><br><span class="line">hexo new page &quot;pageName&quot; #新建页面</span><br><span class="line">hexo generate #生成静态页面至public目录</span><br><span class="line">hexo server #开启预览访问端口（默认端口4000，&#39;ctrl + c&#39;关闭server）</span><br><span class="line">hexo deploy #部署到GitHub</span><br><span class="line">hexo help  # 查看帮助</span><br><span class="line">hexo version  #查看Hexo的版本</span><br><span class="line">说明</span><br><span class="line">hexo new &quot;postName&quot;   ##新建文章  </span><br><span class="line">举例：hexo new &quot;test&quot;   这样就会到blog\source\_posts目录下生成一个test.md文件直接generate后deploy就可以在博客中展示</span><br><span class="line">hexo new page &quot;tags&quot;	这样就会到blog\source\tags目录下生成一个index.md文件直接generate后deploy就可以在博客中展示</span><br></pre></td></tr></table></figure>
+
+<h2 id="如何把博客发布到github"><a href="#如何把博客发布到github" class="headerlink" title="如何把博客发布到github"></a>如何把博客发布到github</h2><p>前面我们在本地通过<code>http://localhost:4000</code>可以访问到默认的博客站点，如果需要发布到外网访问，需要把代码上传到github对应站点的repository中。<br>通过<code>hexo deploy</code> 把生成好的静态页面发布到git，但是在此之前，需要配置目标github的地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd blog</span><br><span class="line">vim _config.xml</span><br></pre></td></tr></table></figure>
+
+<p>找到<code>deploy</code>的配置项，增加如下配置。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:2227324689/2227324689.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<p>接着执行<code>hexo deploy</code>，就能把页面提交到github。</p>
+<blockquote>
+<p>如果出现下面这个错误，说明还需要安装一个插件，在根目录下执行<code>npm install hexo-deployer-git --save</code> 安装插件</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Deployer not found: github 或者 Deployer not found: git</span><br></pre></td></tr></table></figure>
+
+<h2 id="如何更新文章呢？"><a href="#如何更新文章呢？" class="headerlink" title="如何更新文章呢？"></a>如何更新文章呢？</h2><p>博客搭建好之后，最重要的就是要更新博客了.</p>
+<h3 id="使用命令来创建"><a href="#使用命令来创建" class="headerlink" title="使用命令来创建"></a>使用命令来创建</h3><p>进入到<code>blog</code>目录，执行<code>hexo new &#39;blog-name&#39;</code> 来创建一个页面，在blog\source_post目录下就会生成一个blog-name.md文件</p>
+<p>然后我们使用markdown的语法来写文章即可</p>
+<p>创建页面完成后，进入到blog,</p>
+<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1585926618155.png" alt="1585926618155"></p>
+<p>输入如下命令，就可以上传至github</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>可以通过访问 <a href="https://username.github.io就能查看到你更新的文章了" target="_blank" rel="noopener">https://username.github.io就能查看到你更新的文章了</a></p>
+<h2 id="更新主题"><a href="#更新主题" class="headerlink" title="更新主题"></a>更新主题</h2><p>如果你觉得默认的hexo的主题很丑怎么办？</p>
+<p>hexo官方提供了非常多的主题：<a href="https://hexo.io/themes/，" target="_blank" rel="noopener">https://hexo.io/themes/，</a></p>
+<p><strong>例如我选择的主题是</strong><a href="https://github.com/JoeyBling/hexo-theme-yilia-plus" target="_blank" rel="noopener">https://github.com/JoeyBling/hexo-theme-yilia-plus</a></p>
+<p>你需要做的就是选择自己喜欢的主题，并且下载到本地。</p>
+<p>把主题拷贝到 <code>blog/themes</code>目录下</p>
+<p>修改_config.yml中的theme: landscape改为theme: hexo-theme-yilia-plus，然后执行hexo g来重新基于新的主题生成静态页面，然后hexo d即可。</p>
+<p>大家如果搭建过程中遇到了什么问题，可以联系我，我们一起探讨。</p>
+
     
 
     
