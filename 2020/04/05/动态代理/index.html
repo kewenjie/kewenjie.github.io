@@ -17,16 +17,16 @@
 <meta property="og:site_name" content="随风">
 <meta property="og:description" content="自我修养之动态代理模式什么是代理？1代理：顾名思义就是代为处理的意思，在日常生活中，代理无处不在，比如说代购，代课等等  如何去使用代理以及分析动态代理是如何实现的，下面我将从静态代理开始分析： 12场景：	陈老师是教语文的，有一天陈老师生病了，没办法就请了隔壁老王去代课  首先来看下代理有哪些角色  Subject 是顶层接口，RealSubject 是真实对象（被代理对象），Proxy Sub">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="c:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1586096552204.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200405233713452.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21hc3RlcnRvamF2YQ==,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200405233747612.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200405234641407.png">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200405233947125.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21hc3RlcnRvamF2YQ==,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2020-04-05T15:53:51.000Z">
-<meta property="article:modified_time" content="2020-04-05T15:54:38.962Z">
+<meta property="article:modified_time" content="2020-04-05T16:00:18.968Z">
 <meta property="article:author" content="Mr.ke">
 <meta property="article:tag" content="动态代理模式">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1586096552204.png">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200405233713452.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21hc3RlcnRvamF2YQ==,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="随风" type="application/atom+xml">
   
@@ -254,7 +254,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">场景：</span><br><span class="line">	陈老师是教语文的，有一天陈老师生病了，没办法就请了隔壁老王去代课</span><br></pre></td></tr></table></figure>
 
 <p><strong>首先来看下代理有哪些角色</strong></p>
-<p><img src="C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5C1586096552204.png" alt="1586096552204"></p>
+<p><img src="https://img-blog.csdnimg.cn/20200405233713452.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L21hc3RlcnRvamF2YQ==,size_16,color_FFFFFF,t_70" alt="1586096552204"></p>
 <p>Subject 是顶层接口，RealSubject 是真实对象（被代理对象），Proxy Subject是代理对象，代</p>
 <p>理对象持有被代理对象的引用，客户端调用代理对象方法，同时也调用被代理对象的方</p>
 <p>法，但是在代理对象前后增加一些处理。</p>
