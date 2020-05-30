@@ -220,7 +220,7 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h3 id="Thread之join原理分析"><a href="#Thread之join原理分析" class="headerlink" title="Thread之join原理分析"></a>Thread之join原理分析</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">join的出现具体是什么历史原因还不清楚，望大佬告知</span><br></pre></td></tr></table></figure>
+    <h3 id="Thread之join原理分析"><a href="#Thread之join原理分析" class="headerlink" title="Thread之join原理分析"></a>Thread之join原理分析</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">join的出现具体是什么历史原因还不清楚，望大佬告知</span><br><span class="line">这里大胆猜测一下：可能是以前发展的原因，就是为了解决主线程直接执行完成，不阻塞，然后通过join子线程去异步处理数据。</span><br></pre></td></tr></table></figure>
 
 <h5 id="一、场景"><a href="#一、场景" class="headerlink" title="一、场景"></a>一、场景</h5><p>​    A、B、C三个线程需要按照顺序执行</p>
 <h5 id="二、需求"><a href="#二、需求" class="headerlink" title="二、需求"></a>二、需求</h5><p>​    假设有三个任务：A执行第一个任务，B执行第二个任务，C执行第三个任务</p>
