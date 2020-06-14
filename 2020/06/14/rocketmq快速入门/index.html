@@ -6,16 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://kewenjie.github.io">
-  <title>Archives: 2020/5 | 随风</title>
+  <title>rocketmq | 随风</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="随风">
-<meta property="og:url" content="https://kewenjie.github.io/archives/2020/05/index.html">
+  <meta name="description" content="安装rocketmq下载地址如下http:&#x2F;&#x2F;rocketmq.apache.org&#x2F;dowloading&#x2F;releases&#x2F; 启动rocketmq启动NameServer在&#x2F;usr&#x2F;local&#x2F;java&#x2F;rocket&#x2F;rocketmq-all-4.5.0-bin-release路径下执行 nohup sh bin&#x2F;mqnamesrv &amp; tail - f ~&#x2F;logs&#x2F; rocketmq">
+<meta property="og:type" content="article">
+<meta property="og:title" content="rocketmq">
+<meta property="og:url" content="https://kewenjie.github.io/2020/06/14/rocketmq%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/index.html">
 <meta property="og:site_name" content="随风">
+<meta property="og:description" content="安装rocketmq下载地址如下http:&#x2F;&#x2F;rocketmq.apache.org&#x2F;dowloading&#x2F;releases&#x2F; 启动rocketmq启动NameServer在&#x2F;usr&#x2F;local&#x2F;java&#x2F;rocket&#x2F;rocketmq-all-4.5.0-bin-release路径下执行 nohup sh bin&#x2F;mqnamesrv &amp; tail - f ~&#x2F;logs&#x2F; rocketmq">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-06-14T03:42:51.000Z">
+<meta property="article:modified_time" content="2020-06-14T03:42:58.318Z">
 <meta property="article:author" content="Mr.ke">
+<meta property="article:tag" content="消息中间件">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="随风" type="application/atom+xml">
@@ -185,183 +190,272 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="w-rocketmq快速入门" class="article article-type-w " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-w">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/05/30/Thread%E4%B9%8Bjoin%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90/" class="archive-article-date">
-        <time datetime="2020-05-30T09:38:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-30</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/05/30/Thread%E4%B9%8Bjoin%E5%8E%9F%E7%90%86%E5%88%86%E6%9E%90/" target="_blank">并发编程</a>
   
+    <h1 class="article-title" itemprop="name">
+      rocketmq
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2020/06/14/rocketmq%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" class="archive-article-date">
+        <time datetime="2020-06-14T03:42:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-14</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">935字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">3分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="安装rocketmq"><a href="#安装rocketmq" class="headerlink" title="安装rocketmq"></a>安装rocketmq</h1><p>下载地址如下<a href="http://rocketmq.apache.org/dowloading/releases/" target="_blank" rel="noopener">http://rocketmq.apache.org/dowloading/releases/</a></p>
+<h3 id="启动rocketmq"><a href="#启动rocketmq" class="headerlink" title="启动rocketmq"></a>启动rocketmq</h3><h5 id="启动NameServer"><a href="#启动NameServer" class="headerlink" title="启动NameServer"></a>启动NameServer</h5><p>在/usr/local/java/rocket/rocketmq-all-4.5.0-bin-release路径下执行</p>
+<p>nohup sh bin/mqnamesrv &amp;</p>
+<p>tail - f ~/logs/ rocketmqLogs/ namesrv.log </p>
+<h5 id="启动Broker"><a href="#启动Broker" class="headerlink" title="启动Broker"></a>启动Broker</h5><p>nohup sh bin/mqnamesrv &amp;</p>
+<p>tail - f ~/logs/ rocketmqLogs/broker.log </p>
+<h3 id="关闭rocketmq"><a href="#关闭rocketmq" class="headerlink" title="关闭rocketmq"></a>关闭rocketmq</h3><p>关闭 NameServer Broker</p>
+<p>&gt; sh bin/mqshutdown broker  </p>
+<p>The mqbroker (36695) i s running … </p>
+<p>Send shutdown request to mqbroker (36695 ) OK  </p>
+<p>&gt; sh bin/mqs hutdown namesrv  </p>
+<p>The mqnamesr v (36664 ) is runn </p>
+<p>Send shutdown request t o mqnamesrv (36664) OK </p>
+<p>提交代码到码云上报错<br>remote: Incorrect username or password (access token) fatal: Authe<br>解决方案：<br><a href="https://www.cnblogs.com/xiao-apple36/p/10306888.html" target="_blank" rel="noopener">https://www.cnblogs.com/xiao-apple36/p/10306888.html</a></p>
+<p>查看git的地址</p>
+<p>git remote -v</p>
+<h3 id="什么是消息幂等"><a href="#什么是消息幂等" class="headerlink" title="什么是消息幂等"></a>什么是消息幂等</h3><p>当出现消费者对某条消息重复消费的情况时，重复消费的结果与消费一次的结果是相同的，并且多次消费并未对业务系统产生任何负面影响，那么这整个过程就可实现消息幂等。</p>
+<p>例如，在支付场景下，消费者消费扣款消息，对一笔订单执行扣款操作，扣款金额为 100 元。如果因网络不稳定等原因导致扣款消息重复投递，消费者重复消费了该扣款消息，但最终的业务结果是只扣款一次，扣费 100 元，且用户的扣款记录中对应的订单只有一条扣款流水，不会多次扣除费用。那么这次扣款操作是符合要求的，整个消费过程实现了消费幂等。</p>
+<h3 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h3><p>在互联网应用中，尤其在网络不稳定的情况下，消息队列 RocketMQ 版的消息有可能会出现重复。如果消息重复会影响您的业务处理，请对消息做幂等处理。</p>
+<p>消息重复的场景如下：</p>
+<h5 id="发送时消息重复"><a href="#发送时消息重复" class="headerlink" title="发送时消息重复"></a>发送时消息重复</h5><p>当一条消息已被成功发送到服务端并完成持久化，此时出现了网络闪断或者客户端宕机，导致服务端对客户端应答失败。 如果此时生产者意识到消息发送失败并尝试再次发送消息，消费者后续会收到两条内容相同并且 Message ID 也相同的消息。</p>
+<h5 id="投递时消息重复"><a href="#投递时消息重复" class="headerlink" title="投递时消息重复"></a>投递时消息重复</h5><p>消息消费的场景下，消息已投递到消费者并完成业务处理，当客户端给服务端反馈应答的时候网络闪断。为了保证消息至少被消费一次，消息队列 RocketMQ 版的服务端将在网络恢复后再次尝试投递之前已被处理过的消息，消费者后续会收到两条内容相同并且 Message ID 也相同的消息。</p>
+<p>负载均衡时消息重复（包括但不限于网络抖动、Broker 重启以及消费者应用重启）<br>当消息队列 RocketMQ 版的 Broker 或客户端重启、扩容或缩容时，会触发 Rebalance，此时消费者可能会收到重复消息。</p>
+<h3 id="处理方法"><a href="#处理方法" class="headerlink" title="处理方法"></a>处理方法</h3><p>因为 Message ID 有可能出现冲突（重复）的情况，所以真正安全的幂等处理，不建议以 Message ID 作为处理依据。最好的方式是以业务唯一标识作为幂等处理的关键依据，而业务的唯一标识可以通过消息 Key 设置。<br>以支付场景为例，可以将消息的 Key 设置为订单号，作为幂等处理的依据。具体代码示例如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Message message = <span class="keyword">new</span> Message();</span><br><span class="line">message.setKey(<span class="string">"ORDERID_100"</span>);</span><br><span class="line">SendResult sendResult = producer.send(message);</span><br></pre></td></tr></table></figure>
+
+<p>消费者收到消息时可以根据消息的 Key，即订单号来实现消息幂等：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">consumer.subscribe(<span class="string">"ons_test"</span>, <span class="string">"*"</span>, <span class="keyword">new</span> MessageListener() &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Action <span class="title">consume</span><span class="params">(Message message, ConsumeContext context)</span> </span>&#123;</span><br><span class="line">        String key = message.getKey();</span><br><span class="line">        <span class="comment">// 根据业务唯一标识的 Key 做幂等处理</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  
+                </div>
+              </span>
+            </span>
+          </span>
+        </div>
+      </a>
+    </div>
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          Mr.ke
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://kewenjie.github.io/2020/06/14/rocketmq快速入门/" title="rocketmq" target="_blank">https://kewenjie.github.io/2020/06/14/rocketmq快速入门/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">join原理分析</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">消息中间件</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://kewenjie.github.io/2020/06/14/rocketmq%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-w">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/05/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0/" class="archive-article-date">
-        <time datetime="2020-05-23T14:53:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-23</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/02/%E7%A6%BB%E8%81%8C%E5%88%B0%E5%85%A5%E8%81%8C%E7%9A%84%E4%B8%80%E6%AC%A1%E6%80%BB%E7%BB%93/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">面试总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/05/23/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0/" target="_blank">双向链表</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">双向链表</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-w">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/05/23/springboot%E4%B9%8B%E6%9D%A1%E4%BB%B6%E6%B3%A8%E8%A7%A3/" class="archive-article-date">
-        <time datetime="2020-05-23T14:53:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-23</time>
-</a>
 
-        </div>
-    	 
+
+
+
+
+
+
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/05/23/springboot%E4%B9%8B%E6%9D%A1%E4%BB%B6%E6%B3%A8%E8%A7%A3/" target="_blank">条件注解</a>
+  <div id="gitment-ctn"></div>
   
-    </h1>
+    <!-- 中文 -->
+    <link rel="stylesheet" href="/lib/gitment.css">
+    <script src="/lib/gitment.js"></script>
+  
+  <script>
+    <!-- id: "rocketmq" -->
+    var gitment = new Gitment({
+      id: "20200614114251",
+      owner: 'kewenjie',
+      repo: 'kewenjie.github.io',
+      oauth: {
+        client_id: '340dbfa1b5621eb1b32e',
+        client_secret: '4ca8e51c8bbcf5aa4dd3f5af65cb04eb95a15309',
+      },
+    })
+    gitment.render('gitment-ctn')
+  </script>
+
+
   
 
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">条件注解</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/05/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E9%93%BE%E8%A1%A8%E5%8F%8D%E8%BD%AC/" class="archive-article-date">
-        <time datetime="2020-05-21T06:07:59.221Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/05/21/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B9%8B%E9%93%BE%E8%A1%A8%E5%8F%8D%E8%BD%AC/" target="_blank">数据结构之链表反转</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -402,8 +496,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

@@ -191,6 +191,119 @@
             
 
   
+    <article id="w-rocketmq快速入门" class="article article-type-w  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2020/06/14/rocketmq%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" target="_blank">rocketmq</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2020/06/14/rocketmq%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" class="archive-article-date">
+        <time datetime="2020-06-14T03:42:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-14</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h1 id="安装rocketmq"><a href="#安装rocketmq" class="headerlink" title="安装rocketmq"></a>安装rocketmq</h1><p>下载地址如下<a href="http://rocketmq.apache.org/dowloading/releases/" target="_blank" rel="noopener">http://rocketmq.apache.org/dowloading/releases/</a></p>
+<h3 id="启动rocketmq"><a href="#启动rocketmq" class="headerlink" title="启动rocketmq"></a>启动rocketmq</h3><h5 id="启动NameServer"><a href="#启动NameServer" class="headerlink" title="启动NameServer"></a>启动NameServer</h5><p>在/usr/local/java/rocket/rocketmq-all-4.5.0-bin-release路径下执行</p>
+<p>nohup sh bin/mqnamesrv &amp;</p>
+<p>tail - f ~/logs/ rocketmqLogs/ namesrv.log </p>
+<h5 id="启动Broker"><a href="#启动Broker" class="headerlink" title="启动Broker"></a>启动Broker</h5><p>nohup sh bin/mqnamesrv &amp;</p>
+<p>tail - f ~/logs/ rocketmqLogs/broker.log </p>
+<h3 id="关闭rocketmq"><a href="#关闭rocketmq" class="headerlink" title="关闭rocketmq"></a>关闭rocketmq</h3><p>关闭 NameServer Broker</p>
+<p>&gt; sh bin/mqshutdown broker  </p>
+<p>The mqbroker (36695) i s running … </p>
+<p>Send shutdown request to mqbroker (36695 ) OK  </p>
+<p>&gt; sh bin/mqs hutdown namesrv  </p>
+<p>The mqnamesr v (36664 ) is runn </p>
+<p>Send shutdown request t o mqnamesrv (36664) OK </p>
+<p>提交代码到码云上报错<br>remote: Incorrect username or password (access token) fatal: Authe<br>解决方案：<br><a href="https://www.cnblogs.com/xiao-apple36/p/10306888.html" target="_blank" rel="noopener">https://www.cnblogs.com/xiao-apple36/p/10306888.html</a></p>
+<p>查看git的地址</p>
+<p>git remote -v</p>
+<h3 id="什么是消息幂等"><a href="#什么是消息幂等" class="headerlink" title="什么是消息幂等"></a>什么是消息幂等</h3><p>当出现消费者对某条消息重复消费的情况时，重复消费的结果与消费一次的结果是相同的，并且多次消费并未对业务系统产生任何负面影响，那么这整个过程就可实现消息幂等。</p>
+<p>例如，在支付场景下，消费者消费扣款消息，对一笔订单执行扣款操作，扣款金额为 100 元。如果因网络不稳定等原因导致扣款消息重复投递，消费者重复消费了该扣款消息，但最终的业务结果是只扣款一次，扣费 100 元，且用户的扣款记录中对应的订单只有一条扣款流水，不会多次扣除费用。那么这次扣款操作是符合要求的，整个消费过程实现了消费幂等。</p>
+<h3 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h3><p>在互联网应用中，尤其在网络不稳定的情况下，消息队列 RocketMQ 版的消息有可能会出现重复。如果消息重复会影响您的业务处理，请对消息做幂等处理。</p>
+<p>消息重复的场景如下：</p>
+<h5 id="发送时消息重复"><a href="#发送时消息重复" class="headerlink" title="发送时消息重复"></a>发送时消息重复</h5><p>当一条消息已被成功发送到服务端并完成持久化，此时出现了网络闪断或者客户端宕机，导致服务端对客户端应答失败。 如果此时生产者意识到消息发送失败并尝试再次发送消息，消费者后续会收到两条内容相同并且 Message ID 也相同的消息。</p>
+<h5 id="投递时消息重复"><a href="#投递时消息重复" class="headerlink" title="投递时消息重复"></a>投递时消息重复</h5><p>消息消费的场景下，消息已投递到消费者并完成业务处理，当客户端给服务端反馈应答的时候网络闪断。为了保证消息至少被消费一次，消息队列 RocketMQ 版的服务端将在网络恢复后再次尝试投递之前已被处理过的消息，消费者后续会收到两条内容相同并且 Message ID 也相同的消息。</p>
+<p>负载均衡时消息重复（包括但不限于网络抖动、Broker 重启以及消费者应用重启）<br>当消息队列 RocketMQ 版的 Broker 或客户端重启、扩容或缩容时，会触发 Rebalance，此时消费者可能会收到重复消息。</p>
+<h3 id="处理方法"><a href="#处理方法" class="headerlink" title="处理方法"></a>处理方法</h3><p>因为 Message ID 有可能出现冲突（重复）的情况，所以真正安全的幂等处理，不建议以 Message ID 作为处理依据。最好的方式是以业务唯一标识作为幂等处理的关键依据，而业务的唯一标识可以通过消息 Key 设置。<br>以支付场景为例，可以将消息的 Key 设置为订单号，作为幂等处理的依据。具体代码示例如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Message message = <span class="keyword">new</span> Message();</span><br><span class="line">message.setKey(<span class="string">"ORDERID_100"</span>);</span><br><span class="line">SendResult sendResult = producer.send(message);</span><br></pre></td></tr></table></figure>
+
+<p>消费者收到消息时可以根据消息的 Key，即订单号来实现消息幂等：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">consumer.subscribe(<span class="string">"ons_test"</span>, <span class="string">"*"</span>, <span class="keyword">new</span> MessageListener() &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Action <span class="title">consume</span><span class="params">(Message message, ConsumeContext context)</span> </span>&#123;</span><br><span class="line">        String key = message.getKey();</span><br><span class="line">        <span class="comment">// 根据业务唯一标识的 Key 做幂等处理</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">消息中间件</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2020/06/14/rocketmq%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="w-离职到入职的一次总结" class="article article-type-w  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1257,6 +1370,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">面试总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">消息中间件</a>
               </li>
             
             <div class="clearfix"></div>
