@@ -18,7 +18,7 @@
 <meta property="og:description" content="安装rocketmq下载地址如下http:&#x2F;&#x2F;rocketmq.apache.org&#x2F;dowloading&#x2F;releases&#x2F; 启动rocketmq启动NameServer在&#x2F;usr&#x2F;local&#x2F;java&#x2F;rocket&#x2F;rocketmq-all-4.5.0-bin-release路径下执行 nohup sh bin&#x2F;mqnamesrv &amp; tail - f ~&#x2F;logs&#x2F; rocketmq">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-06-14T03:42:51.000Z">
-<meta property="article:modified_time" content="2020-06-14T03:42:58.318Z">
+<meta property="article:modified_time" content="2020-06-14T04:21:18.934Z">
 <meta property="article:author" content="Mr.ke">
 <meta property="article:tag" content="消息中间件">
 <meta name="twitter:card" content="summary">
@@ -223,7 +223,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">935字</span>
+      <span class="post-count">1.1k字</span>
     </span>
   </span>
 
@@ -232,7 +232,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
+      <span class="post-count">4分</span>
     </span>
   </span>
 </div>
@@ -271,6 +271,14 @@
 
 <p>消费者收到消息时可以根据消息的 Key，即订单号来实现消息幂等：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">consumer.subscribe(<span class="string">"ons_test"</span>, <span class="string">"*"</span>, <span class="keyword">new</span> MessageListener() &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Action <span class="title">consume</span><span class="params">(Message message, ConsumeContext context)</span> </span>&#123;</span><br><span class="line">        String key = message.getKey();</span><br><span class="line">        <span class="comment">// 根据业务唯一标识的 Key 做幂等处理</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="通过RocketMQ管控台"><a href="#通过RocketMQ管控台" class="headerlink" title="通过RocketMQ管控台"></a>通过RocketMQ管控台</h3><p>rocketmq-console-ng获取方式为：<a href="https://github.com/apache/rocketmq-externals/tree/master/rocketmq-console" target="_blank" rel="noopener">rocketmq-console-ng</a>，之后通过mavne进行编译获取jar，命令如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mvn clean <span class="keyword">package</span> -Dmaven.test.skip=<span class="keyword">true</span></span><br><span class="line">java -jar target/rocketmq-console-ng-<span class="number">1.0</span><span class="number">.0</span>.jar</span><br></pre></td></tr></table></figure>
+
+<p>如何生成rocketmq-console-ng-1.0.0.jar? 进入到rocketmq-console目录下：E:\WorkingSpace\rocketmq-externals-master\rocketmq-console&gt;mvn clean package -Dmaven.test.skip=true，得到rocketmq-console-ng-1.0.0.jar之后，找到rocketmq-console-ng-1.0.0.jar\BOOT-INF\classes\application.properties文件，根据自己的NamesrvAddr进行修改rocketmq.config.namesrvAddr的值。</p>
+<p>直接启动</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar rocketmq-console-ng-<span class="number">1.0</span><span class="number">.0</span>.jar</span><br></pre></td></tr></table></figure>
+
 
     
 
@@ -567,11 +575,7 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">动态代理模式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">双向链表</a>
+                <a href="javascript:void(0)" class="js-tag color1">消息中间件</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -579,15 +583,19 @@
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">双向链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">join原理分析</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">面试总结</a>
+                <a href="javascript:void(0)" class="js-tag color2">动态代理模式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">消息中间件</a>
+                <a href="javascript:void(0)" class="js-tag color5">面试总结</a>
               </li>
             
             <div class="clearfix"></div>
